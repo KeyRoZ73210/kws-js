@@ -1,0 +1,261 @@
+body {
+    /* fonts */
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    /* /fonts */
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: white;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    background-color: #4169E1;
+    color: white;
+}
+header .center{
+    text-align: center;
+
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header p {
+    margin: 5px 0;
+}
+
+.input-section {
+    padding: 0px;
+}
+
+.input-section input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-section .file-upload {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input-section .file-upload input[type="file"] {
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+
+.input-section .file-upload label {
+    display: block;
+    background-color: #4169E1;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.input-section button {
+    background-color: #4169E1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.input-section button:hover {
+    background-color: #365fbe;
+}
+
+.input-section #recognitionStatus {
+    margin-top: 10px;
+    color: green;
+}
+
+#predictionOutput {
+    margin-top: 20px;
+}
+
+/* Desktop Design */
+@media (min-width: 1024px) {
+    body {
+        justify-content: flex-start;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding: 0;
+    }
+
+    .container {
+        max-width: none;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        flex: 0 0 auto;
+        padding: 40px;
+        text-align: left;
+    }
+
+    header h1 {
+        font-size: 3em;
+    }
+
+    header p {
+        font-size: 1.5em;
+    }
+
+    .input-section {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+    }
+
+    .input-section input[type="text"],
+    .input-section .file-upload label,
+    .input-section button {
+        font-size: 1.2em;
+        padding: 15px;
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .input-section button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .input-section #recognitionStatus {
+        font-size: 1.2em;
+    }
+
+    #predictionOutput {
+        font-size: 1.2em;
+    }
+}
+@media screen and (max-width: 1223px){
+    /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            padding: 20px;
+        }
+    
+        header {
+            background-color: #4169E1;
+            color: white;
+            padding: 20px;
+        }
+    
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+    
+        header p {
+            margin: 5px 0;
+        }
+    
+        .input-section {
+            padding: 20px;
+        }
+    
+        .input-section input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    
+        .input-section .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    
+        .input-section .file-upload input[type="file"] {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+    
+        .input-section .file-upload label {
+            display: block;
+            background-color: #4169E1;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    
+        .input-section button {
+            background-color: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+    
+        .input-section button:hover {
+            background-color: #365fbe;
+        }
+    
+        .input-section #recognitionStatus {
+            margin-top: 10px;
+            color: green;
+        }
+    
+        #predictionOutput {
+            margin-top: 20px;
+        }
+    
+}

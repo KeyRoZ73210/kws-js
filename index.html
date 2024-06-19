@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>TensorFlow.js Audio Prediction</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-<input type="file" id="audioUpload" accept=".wav"/>
-<button onclick="loadAndPredict()">Predict</button>
-<br />
-<div id="predictionOutput"></div>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-<script src="app.js"></script>
+    <div class="container">
+        <header>
+            <div class="center">
+                <h1>Surpuissant</h1>
+                <p>Lorsque la créativité et l'innovation s'unissent, c'est ...</p>
+                <p>Un collectif à la hauteur de vos idées.</p>
+            </div>
+        </header>
+        <div class="input-section">
+            <div class="file-upload">
+                <input type="file" id="audioUpload" accept=".wav" />
+                <label for="audioUpload">Glissez ou cliquez pour déposer un fichier</label>
+            </div>
+            <button onclick="loadAndPredict()">Lancer l'analyse vocale</button>
+        </div>
+        <div id="predictionOutput"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
