@@ -8,22 +8,30 @@
   <body>
     <div class="container">
       <div class="header">
-        <img src="images/image.png" alt="Surpuissant Header" />
+        <img src="images/background.png" alt="Surpuissant Header" />
+      </div>
+      <div class="leaves">
+        <img src="images/leaf_1.png" alt="Leaf 1" class="leaf leaf1" />
+        <img src="images/leaf_2.png" alt="Leaf 2" class="leaf leaf2" />
+        <img src="images/leaf_3.png" alt="Leaf 3" class="leaf leaf3" />
       </div>
       <div class="content">
         <h1>Qu'est ce que le wake word ?</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non
-          tincidunt erat. Duis id fermentum erat, fringilla tincidunt ex. Sed
-          odio elit, faucibus ac egestas ac, porttitor in nisl. Pellentesque at
-          malesuada ipsum. Curabitur laoreet diam lorem, nec egestas diam
-          tincidunt eu. Fusce quis sem magna. Integer in aliquam felis, sed
-          interdum mi. Donec efficitur in purus in lobortis. Duis tincidunt urna
-          ut metus feugiat vestibulum. In a congue urna, in facilisis turpis.
-          Maecenas tristique vestibulum urna vitae malesuada.
+          Un "wake word" (ou mot de réveil) est une commande vocale utilisée
+          pour activer un appareil qui écoute en permanence les instructions
+          vocales. Des exemples courants de wake words sont "Hey Siri" pour les
+          appareils Apple ou "Ok Google" pour les appareils Android. Ces mots de
+          réveil permettent aux utilisateurs de commencer à interagir avec leurs
+          appareils sans appuyer sur des boutons physiques. La technologie de
+          reconnaissance des wake words doit être précise et rapide pour offrir
+          une expérience utilisateur fluide et naturelle.
         </p>
         <h2>Testez le de vous même !</h2>
         <div class="input-container">
+          <label for="audioUpload" class="custom-file-upload"
+            >Choisir un fichier</label
+          >
           <input type="file" id="audioUpload" accept=".wav" />
         </div>
         <button onclick="loadAndPredict()">Lancer l'analyse vocale</button>
