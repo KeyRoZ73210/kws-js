@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>TensorFlow.js Audio Prediction</title>
-</head>
-<body>
-<input type="file" id="audioUpload" accept=".wav"/>
-<button onclick="loadAndPredict()">Predict</button>
-<br />
-<div id="predictionOutput"></div>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-<script src="app.js"></script>
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <img src="images/image.png" alt="Surpuissant Header" />
+      </div>
+      <div class="content">
+        <h1>Qu'est ce que le wake word ?</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non
+          tincidunt erat. Duis id fermentum erat, fringilla tincidunt ex. Sed
+          odio elit, faucibus ac egestas ac, porttitor in nisl. Pellentesque at
+          malesuada ipsum. Curabitur laoreet diam lorem, nec egestas diam
+          tincidunt eu. Fusce quis sem magna. Integer in aliquam felis, sed
+          interdum mi. Donec efficitur in purus in lobortis. Duis tincidunt urna
+          ut metus feugiat vestibulum. In a congue urna, in facilisis turpis.
+          Maecenas tristique vestibulum urna vitae malesuada.
+        </p>
+        <h2>Testez le de vous même !</h2>
+        <div class="input-container">
+          <input type="file" id="audioUpload" accept=".wav" />
+        </div>
+        <button onclick="loadAndPredict()">Lancer l'analyse vocale</button>
+        <div class="prediction-output" id="predictionOutput">
+          Le mot Surpuissant est reconnu 👍
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
