@@ -6,11 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["tensorflow", "wake-word"],
+  "keywords": [
+    "tensorflow",
+    "wake-word"
+  ],
   "author": "Dabernat Damien",
   "license": "Proprietary",
   "copyright": "Copyright © 2024 Surpuissant. All rights reserved.",
   "dependencies": {
-    "@tensorflow/tfjs": "^4.20.0"
+    "@tensorflow/tfjs": "^4.20.0",
+    "nuxt": "^3.12.2"
   }
 }
