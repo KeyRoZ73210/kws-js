@@ -29,14 +29,11 @@
         </p>
         <h2>Testez le de vous même !</h2>
         <div class="input-container">
-          <label for="audioUpload" class="custom-file-upload"
-            >Choisir un fichier</label
-          >
-          <input type="file" id="audioUpload" accept=".wav" />
+          <button id="recordButton">Appuyer pour enregistrer</button>
         </div>
         <button onclick="loadAndPredict()">Lancer l'analyse vocale</button>
         <div class="prediction-output" id="predictionOutput">
-          Le mot Surpuissant est reconnu 👍
+          <span id="recognizedWord">[aucun mot reconnu]</span>
         </div>
       </div>
     </div>
