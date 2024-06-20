@@ -3,7 +3,7 @@
  * @returns {AudioContext} The initialized audio context.
  */
 function getAudioContext() {
-    return new (window.AudioContext || window.webkitAudioContext)();
+  return new (window.AudioContext || window.webkitAudioContext)();
 }
 
 /**
@@ -11,8 +11,8 @@ function getAudioContext() {
  * @returns {Promise<tf.GraphModel>} The loaded TensorFlow model.
  */
 async function loadModel() {
-    const modelPath = 'tfjs_model/model.json';
-    return await tf.loadGraphModel(modelPath);
+  const modelPath = "tfjs_model/model.json";
+  return await tf.loadGraphModel(modelPath);
 }
 
 /**
@@ -45,7 +45,7 @@ function processAudioBuffer(audioBuffer) {
   bufferSource.connect(offlineContext.destination);
   bufferSource.start(0);
 
-  return offlineContext.startRendering().then(renderedBuffer => {
+  return offlineContext.startRendering().then((renderedBuffer) => {
     let inputData = renderedBuffer.getChannelData(0);
     if (inputData.length > inputLength) {
       inputData = inputData.slice(0, inputLength);
@@ -58,29 +58,34 @@ function processAudioBuffer(audioBuffer) {
   });
 }
 
-
 /**
  * Handles the TensorFlow model predictions by displaying the most likely prediction in the UI.
  * @param {tf.Tensor} outputTensor The output tensor from the model prediction.
  */
 async function handlePrediction(outputTensor) {
   const prediction = await outputTensor.data();
-  const highestPrediction = labels.map((label, index) => ({
-    label: label, probability: prediction[index]
-  })).sort((a, b) => b.probability - a.probability)[0];
+  const highestPrediction = labels
+    .map((label, index) => ({
+      label: label,
+      probability: prediction[index],
+    }))
+    .sort((a, b) => b.probability - a.probability)[0];
 
   outputTensor.dispose();
-  return { label: highestPrediction.label, probability: highestPrediction.probability };
+  return {
+    label: highestPrediction.label,
+    probability: highestPrediction.probability,
+  };
 }
 
 /**
  * Orchestrates the loading, processing, and predicting of an audio file.
  */
 async function loadAndPredict() {
-  const fileInput = document.getElementById('audioUpload');
+  const fileInput = document.getElementById("audioUpload");
   const audioFile = fileInput.files[0];
   if (!audioFile) {
-    console.log('Please upload an audio file.');
+    console.log("Please upload an audio file.");
     return;
   }
 
@@ -96,13 +101,24 @@ async function loadAndPredict() {
     const endTime = performance.now();
     const inferenceTime = endTime - startTime;
 
-    document.getElementById('predictionOutput').textContent = `Prediction: ${result.label} with probability ${result.probability.toFixed(2)} in ${inferenceTime.toFixed(2)} ms`;
+    document.getElementById("predictionOutput").textContent = `Prédiction: ${
+      result.label
+    } avec une probabilité de ${result.probability.toFixed(
+      2
+    )} en ${inferenceTime.toFixed(2)} ms`;
   } catch (error) {
-    console.error('Error processing audio file:', error);
+    console.error("Error processing audio file:", error);
   }
 }
 
 const labels = [
-  "background_noise", "forward", "groovit", "happy", "nine",
-  "surpuissant", "two", "visual", "yes"
+  "background_noise",
+  "forward",
+  "groovit",
+  "happy",
+  "nine",
+  "surpuissant",
+  "two",
+  "visual",
+  "yes",
 ];
