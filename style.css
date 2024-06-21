@@ -94,20 +94,19 @@ a {
   width: 100px;
   opacity: 0.8;
 }
-
 .leaf1 {
-  bottom: 10%;
+  bottom: 30%;
   left: 0;
 }
 
 .leaf2 {
-  top: 45%;
+  top: 25%;
   right: 0;
   transform: rotateY(180deg);
 }
 
 .leaf3 {
-  bottom: 10%;
+  bottom: 30%;
   right: 0;
   transform: rotateY(180deg);
 }
@@ -719,3 +718,22 @@ button:hover {
     margin-top: max(-100px, -6.93vw);
   }
 }
+/* 
+@media (min-width: 1440px) {
+  .leaf1 {
+    bottom: 10%;
+    left: 0;
+  }
+  
+  .leaf2 {
+    top: 45%;
+    right: 0;
+    transform: rotateY(180deg);
+  }
+  
+  .leaf3 {
+    bottom: 10%;
+    right: 0;
+    transform: rotateY(180deg);
+  }
+} */
