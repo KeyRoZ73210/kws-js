@@ -1,57 +1,60 @@
-# kws-js
-# Project Overview
-This project uses TensorFlow.js to predict labels from audio input files. It includes a web interface for users to upload audio files and display predictions. The core functionality is handled by app.js, which processes audio data, interacts with a TensorFlow.js model, and displays predictions.
+### README - kw-js
 
-## How the Project Works
-The project consists of an HTML file (index.html) that serves as the user interface. Users can upload audio files, which are then processed and analyzed by the TensorFlow.js model included in the project. The main logic is contained within app.js, which orchestrates the entire process from audio input to prediction output.
+## Contexte du Projet
 
-## Machine Learning Model Details
+Ce projet, vise à démontrer les capacités de reconnaissance vocale en temps réel à l'aide de TensorFlow.js. L'application web permet aux utilisateurs de télécharger des fichiers audio pour prédire des mots-clés spécifiques.
 
-**Input**
-The model accepts audio data as input, specifically expecting:
+## Fonctionnalités 
 
-- Format: WAV file
-- Channel: Mono
-- Sample Rate: 16 kHz
-- Duration: Exactly 1 second (16,000 samples)
+- **Téléchargement de fichiers audio** : Les utilisateurs peuvent télécharger des fichiers audio pour analyse.
+- **Prédiction de mots-clés** : Utilisation d'un modèle pré-entraîné pour prédire les mots-clés à partir des fichiers audio fournis.
 
-**Output**
-The output from the model is a tensor representing the probability distribution across various predefined labels. The highest probability label is considered the prediction result, which is displayed to the user.
+## Technologies Utilisées
 
-## TensorFlow.js and Model Files
-TensorFlow.js is an open-source library that allows running machine learning models directly in the browser using JavaScript. In this project, TensorFlow.js processes audio data and makes predictions using a pre-trained model.
+- **HTML5** : Structure de la page web.
+- **CSS3** : Stylisation et mise en page.
+- **JavaScript** : Logique de l'application.
+- **TensorFlow.js** : Bibliothèque pour l'exécution du modèle de machine learning directement dans le navigateur.
 
-`model.json`: This file contains the model architecture.
-`.bin files`: These are binary files that contain the weights of the model, used by model.json to make predictions.
+## Détails du Modèle de Machine Learning
 
-## Model Training
-The model was trained on 200,000 keywords across 10 categories, making it robust in recognizing and categorizing audio inputs according to these trained categories.
+- **Entrée** :
+  - Format : Fichier WAV ou enregistrement en temps réel
+  - Canal : Mono
+  - Taux d'échantillonnage : 16 kHz
+  - Durée : Exactement 1 seconde (16 000 échantillons)
 
-## Key Processes
-The prediction process is divided into several steps to modularize concerns:
+- **Sortie** :
+  - L'étiquette avec la probabilité la plus élevée est affichée comme résultat de la prédiction.
 
-1. Decode Audio File: Converts the uploaded audio file into an AudioBuffer.
-2. Process Audio Buffer: Adjusts the AudioBuffer to match the model's input requirements (mono, 16 kHz).
-3. Load Model: Loads the TensorFlow model from model.json and its associated .bin files.
-4. Execute Model: Runs the model with the processed audio to get predictions.
-5. Handle Prediction: Processes the output tensor to extract and display the most likely prediction.
+## Instructions pour Lancer le Projet
 
-These steps ensure that the audio data is correctly formatted for the model, that the model is ready for execution, and that the results are interpreted and displayed appropriately.
+### Pré-requis
 
-## Running the Project
+- Un navigateur moderne (Chrome, Firefox) supportant TensorFlow.js.
+- Connexion Internet pour charger TensorFlow.js depuis le CDN.
 
-To use this project, follow these steps:
+### Étapes
 
-1. Get the project files
-2. Open the index.html file in a browser that supports TensorFlow.js (such as Chrome or Firefox).
-3. Use the file input to upload an audio file (preferably in .wav format). See the samples folder for example audio files.
-4. Click the "Predict" button to see the prediction.
+1. **Téléchargez les fichiers du projet** :
+   - Clonez le dépôt ou téléchargez l'archive ZIP contenant tous les fichiers nécessaires.
 
-The project's directory should include:
+2. **Ouvrez le fichier `index.html`** :
+   - Utilisez un navigateur moderne pour ouvrir ce fichier. Cela lancera l'application web.
 
-- `app.js`: Contains the project's main functionality.
-- `index.html`: User interface for interacting with the model.
-- `tfjs_model/`: Directory containing model.json and .bin files.
-- `samples/`: Directory containing sample audio files for testing.
+3. **Utilisez l'interface utilisateur** :
+   - Pour télécharger un fichier audio, utilisez le bouton de téléchargement et sélectionnez un fichier `.wav`. Cliquez ensuite sur "Lancer l'analyse vocale".
 
-Ensure you have an internet connection to load TensorFlow.js from its CDN as specified in the script tag in index.html.
+### Structure du Répertoire
+
+- `index.html` : Interface utilisateur principale.
+- `style.css` : Styles CSS pour la mise en page et le design.
+- `app.js` : Logique principale de l'application, incluant l'interaction avec TensorFlow.js et les fonctionnalités d'enregistrement.
+- `tfjs_model/` : Contient `model.json` et les fichiers `.bin` nécessaires pour le modèle TensorFlow.
+- `images/` : Contient les images utilisées dans l'interface utilisateur.
+- `samples/` : Exemple de fichiers audio pour les tests.
+
+## Contributeurs
+
+Ce projet a été développé par l'équipe Horizon. Nous sommes toujours ouverts aux contributions et aux suggestions pour améliorer ce projet.
+
