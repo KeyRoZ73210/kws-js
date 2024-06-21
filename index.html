@@ -5,31 +5,66 @@
     <meta charset="UTF-8">
     <title>TensorFlow.js Audio Prediction</title>
     <link rel="stylesheet" href="style.css">
-    
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+
 </head>
 
 <body>
     <div class="container">
         <header>
             <div class="center">
-                <h1>Surpuissant</h1>
-                <p>Lorsque la créativité et l'innovation s'unissent, c'est ...</p>
-                <p>Un collectif à la hauteur de vos idées.</p>
+                <img src="img/Subtract.svg" alt="surpuissant" class="surpuissant" width="400vw">
             </div>
         </header>
-        <div class="input-section">
-            <div class="file-upload">
-                <input type="file" id="audioUpload" accept=".wav" />
-                <label for="audioUpload">Glissez ou cliquez pour déposer un fichier</label>
-            </div>
-            <button onclick="loadAndPredict()">Lancer l'analyse vocale</button>
+        <div class="paragraph">
+            <p>
+                Surpuissant est un outil d'analyse vocale qui permet de lancer une action à partir d'un enregistrement
+                audio. Pour cela, il suffit de télécharger un fichier audio de <bold>1 seconde</bold> et de lancer
+                l'analyse
+                vocale.
+            </p>
         </div>
-        <div id="predictionOutput"></div>
+        <div class="input-section">
+            <div class="upload-files-container">
+                <div class="drag-file-area">
+                    <span class="material-icons-outlined upload-icon"> file_upload </span>
+                    <h3 class="dynamic-message"> Drag &amp; drop any file here </h3>
+                    <label class="label"> or <span class="browse-files"> <input type="file" class="default-file-input"
+                                id="audioUpload" accept=".wav" /> <span class="browse-files-text">browse file</span>
+                            <span>from device</span> </span> </label>
+                </div>
+                <span class="cannot-upload-message"> <span class="material-icons-outlined">error</span> Please select a
+                    file
+                    first
+                    <span class="material-icons-outlined cancel-alert-button">cancel</span> </span>
+                <div class="file-block">
+                    <div class="file-info"> <span class="material-icons-outlined file-icon">description</span> <span
+                            class="file-name"> </span> | <span class="file-size"> </span> </div>
+                    <span class="material-icons remove-file-icon">delete</span>
+                    <div class="progress-bar"> </div>
+                </div>
+                <button type="button" class="upload-button" onclick="loadAndPredict()"> Lancer l'analyse vocale </button>
+            </div>
+        </div>
+        <div id="predictionOutput" class="modal">
+            <div class="modalBody">
+                <div class="modal-content">
+                    <img src="img/texte.svg" alt="alternative logo of surpuissant" class="surpuissant-alt" width="60vw">
+                    <h4>Prediction Result</h4>
+                    <p id="resultLabel" class="result-label"></p>
+                    <p id="resultStats" class="result-stats"></p>
+                    <div class="modal-footer">
+                        <button id="closeModal" class="modal-close-button">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
     <script src="app.js"></script>
