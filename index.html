@@ -4,45 +4,87 @@
     <meta charset="UTF-8" />
     <title>TensorFlow.js Audio Prediction</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
   </head>
   <body>
-    <div class="container">
-      <div class="header">
-        <img src="images/background.png" alt="Surpuissant Header" />
-      </div>
-      <div class="leaves">
-        <img src="images/leaf_1.png" alt="Leaf 1" class="leaf leaf1" />
-        <img src="images/leaf_2.png" alt="Leaf 2" class="leaf leaf2" />
-        <img src="images/leaf_3.png" alt="Leaf 3" class="leaf leaf3" />
-      </div>
-      <div class="content">
-        <h1 class="reveal reveal--left">Qu'est ce que le wake word ?</h1>
-        <p class="reveal reveal--right">
-          Un "wake word" (ou mot de réveil) est une commande vocale utilisée
-          pour activer un appareil qui écoute en permanence les instructions
-          vocales. Des exemples courants de wake words sont "Hey Siri" pour les
-          appareils Apple ou "Ok Google" pour les appareils Android. Ces mots de
-          réveil permettent aux utilisateurs de commencer à interagir avec leurs
-          appareils sans appuyer sur des boutons physiques. La technologie de
-          reconnaissance des wake words doit être précise et rapide pour offrir
-          une expérience utilisateur fluide et naturelle.
-        </p>
-        <h2 class="reveal reveal--left">Testez le de vous même !</h2>
-        <div class="input-container">
-          <label for="audioUpload" class="custom-file-upload"
-            >Choisir un fichier</label
-          >
-          <input type="file" id="audioUpload" accept=".wav" />
+    <header class="header">
+      <img src="images/background.png" alt="Surpuissant Header" />
+    </header>
+    <main class="site-main">
+      <section class="all">
+        <div class="container-fluid px-0">
+          <div class="leaves">
+            <img src="images/leaf_1.png" alt="Leaf 1" class="leaf leaf1" />
+            <img src="images/leaf_2.png" alt="Leaf 2" class="leaf leaf2" />
+            <img src="images/leaf_3.png" alt="Leaf 3" class="leaf leaf3" />
+          </div>
+          <div class="content">
+            <div class="ws-100"></div>
+            <h1 class="reveal reveal--left">Qu'est ce que le wake word ?</h1>
+            <div class="ws-30"></div>
+            <p class="text text--content reveal reveal--right">
+              Un "wake word" (ou mot de réveil) est une commande vocale utilisée
+              pour activer un appareil qui écoute en permanence les instructions
+              vocales. Des exemples courants de wake words sont "Hey Siri" pour les
+              appareils Apple ou "Ok Google" pour les appareils Android. Ces mots de
+              réveil permettent aux utilisateurs de commencer à interagir avec leurs
+              appareils sans appuyer sur des boutons physiques. La technologie de
+              reconnaissance des wake words doit être précise et rapide pour offrir
+              une expérience utilisateur fluide et naturelle.
+            </p>
+            <div class="ws-30"></div>
+            <h2 class="reveal reveal--left">Testez le de vous même !</h2>
+            <div class="input-container">
+              <label for="audioUpload" class="custom-file-upload"
+                >Choisir un fichier</label
+              >
+              <input type="file" id="audioUpload" accept=".wav" />
+            </div>
+            <button onclick="loadAndPredict()">Lancer l'analyse vocale</button>
+            <div class="text prediction-output" id="predictionOutput"></div>
+          </div>
+          <div class="ws-100"></div>
         </div>
-        <button onclick="loadAndPredict()">Lancer l'analyse vocale</button>
-        <div class="prediction-output" id="predictionOutput"></div>
-      </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-    <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script> -->
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-    <script src="app.js"></script>
-    <script src="anim.js"></script>
+      </section>
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+      <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script> -->
+      <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script> 
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+      <script src="app.js"></script>
+      <script src="anim.js"></script>
+    </main>
   </body>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="ws-50"></div>
+          <p class="footer--header">Prêt à dépasser les limites du possible ?</p>
+          <div class="ws-30"></div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-3">
+          <span class="footer--title">Contactez-nous</span>
+          <div class="ws"></div>
+          <a href="mailto:hello@surpuissant.com">hello@surpuissant.com</a>
+      </div>
+        <div class="col-12 col-lg-3">
+          <span class="footer--title">Venez prendre un café</span>
+          <div class="ws"></div>
+          <p class="footer--text">Les Papeteries Image Factory</p>
+          <p class="footer--text">3 Esplanade Augustin Aussedat</p>
+          <p class="footer--text">74000 Annecy</p>
+      </div>
+      <div class="ws-60"></div>
+      <!-- <div class="row">
+        <div class="col-12 col-lg-3">
+          <span class="footer--title">Mentions légales</span>
+          <span class="footer--title">Droits d'auteur</span>
+      </div> -->
+    </div>
+  </footer>
 </html>
