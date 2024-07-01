@@ -22,31 +22,41 @@
                 <img src="img/Subtract.svg" alt="surpuissant" class="surpuissant" width="400vw">
             </div>
         </header>
-        <div class="paragraph">
-            <p>
-                Surpuissant est un outil d'analyse vocale qui permet de lancer une action à partir d'un enregistrement
-                audio. Pour cela, il suffit de télécharger un fichier audio de <bold>1 seconde</bold> et de lancer
-                l'analyse
-                vocale.
-            </p>
-        </div>
         <div class="input-section">
+            <h1 class="reveal">Qu'est ce que le wake word ?</h1>
+            <div class="paragraph">
+                <p>
+                    Un "wake word" (ou mot de réveil) est une commande vocale utilisée
+                    pour activer un appareil qui écoute en permanence les instructions
+                    vocales. Des exemples courants de wake words sont "Hey Siri" pour les
+                    appareils Apple ou "Ok Google" pour les appareils Android. Ces mots de
+                    réveil permettent aux utilisateurs de commencer à interagir avec leurs
+                    appareils sans appuyer sur des boutons physiques. La technologie de
+                    reconnaissance des wake words doit être précise et rapide pour offrir
+                    une expérience utilisateur fluide et naturelle.
+                </p>
+            </div>
+            
             <div class="upload-files-container">
                 <div class="drag-file-area">
                     <span class="material-icons-outlined upload-icon"> file_upload </span>
-                    <h3 class="dynamic-message"> Drag &amp; drop any file here </h3>
-                    <label class="label"> or <span class="browse-files"> <input type="file" class="default-file-input"
-                                id="audioUpload" accept=".wav" /> <span class="browse-files-text">browse file</span>
-                            <span>from device</span> </span> </label>
+                    <h3 class="dynamic-message ">Testez de vous même !</h3>
+                    <label class="label">
+                        <span class="browse-files"> 
+                            <input type="file" class="default-file-input" id="audioUpload" accept=".wav" /> 
+                            <span class="browse-files-text">Sélectionner le fichier</span>
+                        </span> 
+                    </label>
                 </div>
-                <span class="cannot-upload-message"> <span class="material-icons-outlined">error</span> Please select a
-                    file
-                    first
-                    <span class="material-icons-outlined cancel-alert-button">cancel</span> </span>
+                <span class="cannot-upload-message"> 
+                    <span class="material-icons-outlined">Erreur</span> 
+                        Merci de sélectionner un fichier audio valide.
+                    <span class="material-icons-outlined cancel-alert-button">quitter</span> 
+                </span>
                 <div class="file-block">
                     <div class="file-info"> <span class="material-icons-outlined file-icon">description</span> <span
                             class="file-name"> </span> | <span class="file-size"> </span> </div>
-                    <span class="material-icons remove-file-icon">delete</span>
+                    <span class="material-icons remove-file-icon">supprimer</span>
                     <div class="progress-bar"> </div>
                 </div>
                 <button type="button" class="upload-button" onclick="loadAndPredict()"> Lancer l'analyse vocale </button>
@@ -56,14 +66,25 @@
             <div class="modalBody">
                 <div class="modal-content">
                     <img src="img/texte.svg" alt="alternative logo of surpuissant" class="surpuissant-alt" width="60vw">
-                    <h4>Prediction Result</h4>
+                    <h4>Résultats</h4>
                     <p id="resultLabel" class="result-label"></p>
                     <p id="resultStats" class="result-stats"></p>
                     <div class="modal-footer">
-                        <button id="closeModal" class="modal-close-button">Close</button>
+                        <button id="closeModal" class="modal-close-button">Fermer</button>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="paragraph">
+            <p>
+                Un outil d'analyse vocale qui permet de lancer une action à partir d'un enregistrement
+                audio. Pour cela, il suffit de télécharger un fichier audio de <bold>1 seconde</bold> et de lancer
+                l'analyse
+                vocale.
+            </p>
+        </div>
+        <div class="footer">
+            
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>

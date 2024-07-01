@@ -11,9 +11,22 @@ body {
 }
 
 .container {
-    overflow: hidden;
+    overflow-x: hidden;
     width: 100%;
     text-align: center;
+}
+.container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+.container::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F5F5F5;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #0043af;
 }
 
 header {
@@ -42,20 +55,32 @@ header p {
     color: #FFFFFF;
     box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
 }
+.paragraph p {
+    padding-left: 30vw;
+    padding-right: 30vw;
+    font-size: large;
+}
+
+.reveal{
+    color: #FF6600;
+    font-weight: bold;
+}
 
 .input-section {
     padding: 0;
+    margin: 0;
 }
 
 .input-section input[type="text"] {
     width: 100%;
-    padding: 2vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
     margin-bottom: 2vh;
     animation: all 0.5s ease-in-out;
 }
 
 .input-section .file-upload {
-    overflow: hidden;
+    overflow-x: hidden;
     width: 100%;
     margin-bottom: 2vh;
     display: flex;
@@ -124,7 +149,6 @@ header p {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 4vh;
     }
 
     .lunch {
@@ -154,10 +178,6 @@ header p {
     .container {
         background-color: #FFFFFF;
         text-align: center;
-    }
-
-    .input-section {
-        padding: 2vh;
     }
 
     .input-section input[type="text"] {
